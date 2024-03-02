@@ -1,0 +1,438 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %} {% endblock %} - Contact Us </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet"
+          href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet"
+          href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}">
+    <!-- Google fonts - Roboto for copy, Montserrat for headings-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,700">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <!-- owl carousel-->
+    <link rel="stylesheet"
+          href="{% static 'vendor/owl.carousel/assets/owl.carousel.css' %}">
+    <link rel="stylesheet"
+          href="{% static 'vendor/owl.carousel/assets/owl.theme.default.css' %}">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="{% static 'css/style.default.css' %}"
+          id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    {% block styles %}{% endblock %}
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="static/img/11.png">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <style>
+@import url(https://fonts.googleapis.com/css?family=Sniglet|Raleway:900);
+
+
+body, html{
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	font-family: 'Sniglet', cursive;
+}
+h1{
+	font-weight: normal;
+	font-size: 4em;
+	font-family: 'Raleway', sans-serif;
+	margin: 0 auto;
+	margin-top: 30px;
+	width: 500px;
+	color: #F90;
+	text-align: center;
+
+}
+
+/* Animation webkit */
+@-webkit-keyframes myfirst
+{
+	0% {margin-left: -235px}
+	90% {margin-left: 100%;}
+	100% {margin-left: 100%;}
+}
+
+/* Animation */
+@keyframes myfirst
+{
+	0% {margin-left: -235px}
+	70% {margin-left: 100%;}
+	100% {margin-left: 100%;}
+}
+
+.fish{
+	background-image: url('http://www.geertjanhendriks.nl/codepen/form/fish.png');
+	width: 235px;
+	height: 104px;
+	margin-left: -235px;
+	position: absolute;
+	animation: myfirst 24s;
+	-webkit-animation: myfirst 24s;
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	-webkit-animation-timing-function: linear;
+}
+
+#fish{
+	top: 120px;
+}
+
+#fish2{
+	top: 260px;
+	animation-delay: 12s;
+	-webkit-animation-delay: 12s;
+}
+
+
+header{
+	height: 160px;
+	background: url('http://www.geertjanhendriks.nl/codepen/form/golf.png') repeat-x bottom;
+}
+
+#form{
+	height: 100%;
+	background-color: #98d4f3;
+	overflow: hidden;
+	position: relative;
+
+}
+form{
+	margin: 0 auto;
+	width: 500px;
+	padding-top: 40px;
+	color: white;
+	position: relative;
+
+
+}
+label, input, textarea{
+	display: block;
+}
+input, textarea{
+	width: 500px;
+	border: none;
+	border-radius: 20px;
+	outline: none;
+	padding: 10px;
+	font-family: 'Sniglet', cursive;
+	font-size: 1em;
+	color: #676767;
+	transition: border 0.5s;
+	-webkit-transition: border 0.5s;
+	-moz-transition: border 0.5s;
+	-o-transition: border 0.5s;
+	border: solid 3px #98d4f3;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+
+}
+input:focus, textarea:focus{
+	border: solid 3px #77bde0;
+}
+
+textarea{
+	height: 100px;
+	resize: none;
+	overflow: auto;
+}
+input[type="submit"]{
+	background-color: #F90;
+	color: white;
+	height: 50px;
+	cursor: pointer;
+	margin-top: 30px;
+	font-size: 1.29em;
+	font-family: 'Sniglet', cursive;
+	-webkit-transition: background-color 0.5s;
+	-moz-transition: background-color 0.5s;
+	-o-transition: background-color 0.5s;
+	transition: background-color 0.5s;
+}
+input[type="submit"]:hover{
+	background-color: #e58f0e;
+
+}
+label{
+	font-size: 1.5em;
+	margin-top: 20px;
+	padding-left: 20px;
+}
+.formgroup, .formgroup-active, .formgroup-error{
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	background-size: 10.5%;
+	transition: background-image 0.7s;
+	-webkit-transition: background-image 0.7s;
+	-moz-transition: background-image 0.7s;
+	-o-transition: background-image 0.7s;
+	width: 566px;
+	padding-top: 2px;
+}
+
+.formgroup{
+	background-image: url('http://www.geertjanhendriks.nl/codepen/form/pixel.gif');
+}
+.formgroup-active{
+	background-image: url('http://www.geertjanhendriks.nl/codepen/form/octo.png');
+}
+.formgroup-error{
+	background-image: url('http://www.geertjanhendriks.nl/codepen/form/octo-error.png');
+	color: red;
+}
+ .footer .footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3.5rem;
+  padding: 0px;
+}
+.footer-row .footer-col h4 {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.footer-col .links {
+  margin-top: 0px;
+}
+.footer-col .links li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+</style>
+
+<script>
+    $('document').ready(function(){
+	$('input[type="text"], input[type="email"], textarea').focus(function(){
+		var background = $(this).attr('id');
+		$('#' + background + '-form').addClass('formgroup-active');
+		$('#' + background + '-form').removeClass('formgroup-error');
+	});
+	$('input[type="text"], input[type="email"], textarea').blur(function(){
+		var background = $(this).attr('id');
+		$('#' + background + '-form').removeClass('formgroup-active');
+	});
+
+function errorfield(field){
+	$(field).addClass('formgroup-error');
+	console.log(field);
+}
+
+$("#waterform").submit(function() {
+	var stopsubmit = false;
+
+if($('#name').val() == "") {
+	errorfield('#name-form');
+	stopsubmit=true;
+}
+if($('#email').val() == "") {
+	errorfield('#email-form');
+	stopsubmit=true;
+}
+  if(stopsubmit) return false;
+});
+
+});
+</script>
+</head>
+<body>
+<!-- navbar-->
+<header class="header">
+    <nav class="navbar navbar-expand-lg bg-blue">
+        <div class="container">
+            <a href="/" class="navbar-brand">
+                 <img src="{% static 'img/22.png' %}" alt="logo" class="d-none d-lg-block" height="110" width="230">
+                <span class="sr-only">Home</span>
+            </a>
+            <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler navbar-toggler-right">Menu<i class="fa fa-bars"></i>
+            </button>
+            <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a href="/" class="nav-link">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                     <li class="nav-item ">
+                        <a href="jobs" class="nav-link"><i class="fa fa-newspaper-o"></i>Jobs </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about" class="nav-link"><i class="fa fa-id-badge"></i>About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact" class="nav-link"><i class="fa fa-fw fa-envelope"></i>Contact</a>
+                    </li>
+                    {% if request.user.is_authenticated and request.user.role == 'employer' %}
+                        <li class="nav-item dropdown">
+                            <a id="clientZone" href="#" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false"
+                               class="nav-link dropdown-toggle has-img mb-3 mb-lg-0 mt-3 mt-lg-0">
+                                <div class="client-menu-image">
+                                    <div class="inner">
+                                        <img src="{% static 'img/1.jpeg' %}"
+                                             alt="company image"
+                                             class="img-fluid">
+                                    </div>
+                                </div>
+                                {% if request.user.role == 'employee' %}
+                                    {{ request.user.first_name }} {{ request.user.last_name }}
+                                {% else %}
+                                    {{ request.user.first_name }}
+                                {% endif %}
+                            </a>
+                            <div aria-labelledby="clientZone" class="dropdown-menu">
+                                <a href="{% url 'jobs:employer-dashboard' %}" class="dropdown-item">Dashboard</a>
+                                <a href="{% url 'jobs:employer-all-applicants' %}" class="dropdown-item">Applicants </a>
+                                <a href="{% url 'jobs:employer-jobs-create' %}" class="dropdown-item">Post a new
+                                    job </a>
+                                <a href="{% url 'accounts:logout' %}" class="dropdown-item">Logout</a>
+                            </div>
+                        </li>
+                    {% elif request.user.is_authenticated and request.user.role == 'employee' %}
+                        <li class="nav-item dropdown">
+                            <a id="clientZone" href="#" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false"
+                               class="nav-link dropdown-toggle has-img mb-3 mb-lg-0 mt-3 mt-lg-0">
+                                <div class="client-menu-image">
+                                    <div class="inner">
+                                        <img src="{% static 'img/1.jpeg' %}"
+                                             alt="company image"
+                                             class="img-fluid">
+                                    </div>
+                                </div>
+                                {% if request.user.role == 'employee' %}
+                                    {{ request.user.first_name }} {{ request.user.last_name }}
+                                {% else %}
+                                    {{ request.user.first_name }}
+                                {% endif %}
+                            </a>
+                            <div aria-labelledby="clientZone" class="dropdown-menu">
+                                <a href="{% url 'accounts:employer-profile-update' %}" class="dropdown-item">Edit Profile</a>
+                                <a href="{% url 'accounts:logout' %}" class="dropdown-item">Logout</a>
+                            </div>
+                        </li>
+                    {% else %}
+                        <li class="nav-item dropdown">
+                            <a id="pages" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                               class="nav-link dropdown-toggle"><i class="fa fa-signing"></i>Register
+                            </a>
+                            <div aria-labelledby="pages" class="dropdown-menu">
+                                <a href="{% url 'accounts:employee-register' %}" class="dropdown-item">Employee</a>
+                                <a href="{% url 'accounts:employer-register' %}" class="dropdown-item">Employers</a>
+                            </div>
+                        </li>
+                        <li class="nav-item" style="color: #fff">
+                            <a href="{% url 'accounts:login' %}" class="btn navbar-btn btn-outline-light mb-5 mb-lg-0">
+                                <i class="fa fa-sign-in"></i>Login
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div>
+    {% if messages %}
+
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+{#            <li{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</li>#}
+        {% endfor %}
+
+    {% endif %}
+    {% block content %} {% endblock %}
+</div>
+
+<header>
+	<h1>Contact us</h1>
+</header>
+
+<div id="form">
+
+<div class="fish" id="fish"></div>
+<div class="fish" id="fish2"></div>
+
+<form id="waterform" method="post" action="https://docs.google.com/forms/d/e/1FAIpQLScdbxoBjw2NmP7ljzJOYfO77jGKg1cb0Ck1lqVzebE-WxkIyw/viewform">
+
+<div class="formgroup" id="name-form">
+    <label for="name">Your name*</label>
+    <input type="text" id="name" name="name" />
+</div>
+
+<div class="formgroup" id="email-form">
+    <label for="email">Your e-mail*</label>
+    <input type="email" id="email" name="email" />
+</div>
+
+<div class="formgroup" id="message-form">
+    <label for="message">Your message</label>
+    <textarea id="message" name="message"></textarea>
+</div>
+
+	<input type="submit" value="Send your message!" />
+</form>
+</div>
+
+
+  </div>
+</div>
+<footer class="footer">
+    <div class="footer__block">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 mb-5">
+                    <h4 class="h5"> Online Job Portal </h4>
+                    <p> Online Job Portal is an online platform which helps Employee, Jobseeker to get job in Organization as per their requirements and profiles and Employers can post multiple jobs opportunity on the site and hire to the jobseeker/employee as per organization requirements.    </p>
+                </div>
+                <div class="col-lg-4 col-md-12 mb-5">
+                    <h4 class="h5">Special Links </h4>
+                    <div class="footer-row">
+                        <div class="footer-col">
+                          <ul class="links">
+                            <li><a href="/"> Home </a></li>
+                            <li><a href="jobs"> Jobs </a></li>
+                            <li><a href="about"> About Us</a></li>
+                            <li><a href="contact"> Contact Us </a></li>
+                          </ul>
+                        </div>
+                </div>
+            </div>
+                <div class="col-lg-4 col-md-12 mb-5">
+                    <h4 class="h5">Online Job Portal </h4>
+                    <p><img src="{% static 'img/11.png' %}" height="150" width="250"></p>
+                </div>
+            </div>
+        </div>
+    <div class="footer__copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-md-left text-center">
+                    <p align="center"> Online Job Portal © 2024  || All rights reserved  </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
